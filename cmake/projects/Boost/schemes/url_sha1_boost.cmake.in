@@ -49,12 +49,6 @@ foreach(x ${boost_libs})
   list(APPEND boost_list "--without-${x}")
 endforeach()
 
-if("@MSVC@")
-  set(env_cmd "@HUNTER_MSVC_VCVARSALL@" "@HUNTER_MSVC_ARCH@")
-else()
-  set(env_cmd "")
-endif()
-
 if(CMAKE_HOST_WIN32)
   set(install_cmd "b2")
   set(bootstrap_cmd "bootstrap.bat")
@@ -63,10 +57,16 @@ else()
   set(bootstrap_cmd "./bootstrap.sh")
 endif()
 
+if("@MSVC@")
+  list(INSERT install_cmd 0 "@HUNTER_MSVC_VCVARSALL@" @HUNTER_MSVC_ARCH@ && cd /D "@HUNTER_PACKAGE_SOURCE_DIR@" &&)
+  list(INSERT bootstrap_cmd 0 "@HUNTER_MSVC_VCVARSALL@" @HUNTER_MSVC_ARCH@ && cd /D "@HUNTER_PACKAGE_SOURCE_DIR@" &&)
+endif()
+
 if("@MINGW@")
   # Test scenario: MinGW installed in system, Visual Studio - not
   list(APPEND bootstrap_cmd "gcc")
 endif()
+
 if(APPLE)
   # Clear Xcode environment
   set(
@@ -101,7 +101,7 @@ ExternalProject_Add(
     "@HUNTER_PACKAGE_INSTALL_PREFIX@"
         # not used, just avoid creating Install/<name> empty directory
     CONFIGURE_COMMAND
-    ${env_cmd}
+    ""
     COMMAND
     ${bootstrap_cmd}
     BUILD_COMMAND
