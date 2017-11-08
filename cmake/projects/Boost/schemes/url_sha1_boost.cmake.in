@@ -56,11 +56,11 @@ else()
 endif()
 
 if(CMAKE_HOST_WIN32)
-  set(install_cmd "b2")
+  set(install_cmd "b2.exe")
   set(bootstrap_cmd "bootstrap.bat")
 else()
-  set(install_cmd "./b2")
-  set(bootstrap_cmd "./bootstrap.sh")
+  set(install_cmd "b2")
+  set(bootstrap_cmd "bootstrap.sh")
 endif()
 
 if("@MINGW@")
@@ -103,13 +103,13 @@ ExternalProject_Add(
     CONFIGURE_COMMAND
     ${env_cmd}
     COMMAND
-    ${bootstrap_cmd}
+    @HUNTER_PACKAGE_SOURCE_DIR@/${bootstrap_cmd}
     BUILD_COMMAND
     ""
     BUILD_IN_SOURCE
     1
     INSTALL_COMMAND
-    ${install_cmd}
+    @HUNTER_PACKAGE_SOURCE_DIR@/${install_cmd}
     --layout=tagged
     -d0
     install
