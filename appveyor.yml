@@ -1,0 +1,298 @@
+# Windows (https://github.com/travis-ci-tester/toolchain-table)
+
+# Broken ninja/nmake builds (works fine on my local machine...):
+# * https://ci.appveyor.com/project/ingenue/hunter/build/1.0.81
+
+environment:
+  global:
+    # This variable used only if '--upload' added to 'jenkins.py'
+    GITHUB_USER_PASSWORD:
+      secure: KbhVDnegXkjLm8H7lUZX9/t/4AL3dzhQLy8mWZ3Ldv0sXDs7d5bFz7+Yo3EFZNtw
+
+  matrix:
+    # Note: 'default' toolchain is the same as 'vs-14-2015'
+
+    ### Boost ###
+
+    # FIXME:
+    # - TOOLCHAIN: "ninja-vs-12-2013-win64"
+    #   PROJECT_DIR: examples\Boost
+
+    # FIXME:
+    # - TOOLCHAIN: "nmake-vs-12-2013-win64"
+    #   PROJECT_DIR: examples\Boost
+
+    - TOOLCHAIN: "vs-12-2013-win64"
+      PROJECT_DIR: examples\Boost
+
+    - TOOLCHAIN: "vs-12-2013-xp"
+      PROJECT_DIR: examples\Boost
+
+    - TOOLCHAIN: "vs-12-2013"
+      PROJECT_DIR: examples\Boost
+
+    - TOOLCHAIN: "vs-14-2015"
+      PROJECT_DIR: examples\Boost
+
+    - TOOLCHAIN: "vs-14-2015-win64"
+      PROJECT_DIR: examples\Boost
+
+    - TOOLCHAIN: "mingw"
+      PROJECT_DIR: examples\Boost
+
+    - TOOLCHAIN: "mingw-c11"
+      PROJECT_DIR: examples\Boost
+
+    # timeout: https://ci.appveyor.com/project/ingenue/hunter/build/1.0.651/job/h2lruqh872w9x2qa
+    # - TOOLCHAIN: "msys"
+    #   PROJECT_DIR: examples\Boost
+
+    ### Boost-filesystem ###
+
+    # FIXME:
+    # - TOOLCHAIN: "ninja-vs-12-2013-win64"
+    #   PROJECT_DIR: examples\Boost-filesystem
+
+    # FIXME:
+    # - TOOLCHAIN: "nmake-vs-12-2013-win64"
+    #   PROJECT_DIR: examples\Boost-filesystem
+
+    - TOOLCHAIN: "vs-12-2013-win64"
+      PROJECT_DIR: examples\Boost-filesystem
+
+    - TOOLCHAIN: "vs-12-2013-xp"
+      PROJECT_DIR: examples\Boost-filesystem
+
+    - TOOLCHAIN: "vs-12-2013"
+      PROJECT_DIR: examples\Boost-filesystem
+
+    - TOOLCHAIN: "vs-14-2015"
+      PROJECT_DIR: examples\Boost-filesystem
+
+    - TOOLCHAIN: "vs-14-2015-win64"
+      PROJECT_DIR: examples\Boost-filesystem
+
+    - TOOLCHAIN: "mingw"
+      PROJECT_DIR: examples\Boost-filesystem
+
+    # timeout: https://ci.appveyor.com/project/ingenue/hunter/build/1.0.651/job/h2lruqh872w9x2qa
+    # - TOOLCHAIN: "msys"
+    #   PROJECT_DIR: examples\Boost-filesystem
+
+    ### Boost-system ###
+
+    # FIXME:
+    # - TOOLCHAIN: "ninja-vs-12-2013-win64"
+    #   PROJECT_DIR: examples\Boost-system
+
+    # FIXME:
+    # - TOOLCHAIN: "nmake-vs-12-2013-win64"
+    #   PROJECT_DIR: examples\Boost-system
+
+    - TOOLCHAIN: "vs-12-2013-win64"
+      PROJECT_DIR: examples\Boost-system
+
+    - TOOLCHAIN: "vs-12-2013-xp"
+      PROJECT_DIR: examples\Boost-system
+
+    - TOOLCHAIN: "vs-12-2013"
+      PROJECT_DIR: examples\Boost-system
+
+    - TOOLCHAIN: "vs-14-2015"
+      PROJECT_DIR: examples\Boost-system
+
+    - TOOLCHAIN: "vs-14-2015-win64"
+      PROJECT_DIR: examples\Boost-system
+
+    - TOOLCHAIN: "mingw"
+      PROJECT_DIR: examples\Boost-system
+
+    - TOOLCHAIN: "mingw-c11"
+      PROJECT_DIR: examples\Boost-system
+
+    # timeout: https://ci.appveyor.com/project/ingenue/hunter/build/1.0.651/job/h2lruqh872w9x2qa
+    # - TOOLCHAIN: "msys"
+    #   PROJECT_DIR: examples\Boost-system
+
+    ### Boost-iostreams ###
+
+    # FIXME:
+    # - TOOLCHAIN: "ninja-vs-12-2013-win64"
+    #   PROJECT_DIR: examples\Boost-iostreams
+
+    # FIXME:
+    # - TOOLCHAIN: "nmake-vs-12-2013-win64"
+    #   PROJECT_DIR: examples\Boost-iostreams
+
+    - TOOLCHAIN: "vs-12-2013-win64"
+      PROJECT_DIR: examples\Boost-iostreams
+
+    - TOOLCHAIN: "vs-12-2013-xp"
+      PROJECT_DIR: examples\Boost-iostreams
+
+    - TOOLCHAIN: "vs-12-2013"
+      PROJECT_DIR: examples\Boost-iostreams
+
+    - TOOLCHAIN: "vs-14-2015"
+      PROJECT_DIR: examples\Boost-iostreams
+
+    # FIXME:
+    # * https://ci.appveyor.com/project/ingenue/hunter/build/1.0.81/job/gyvurjesgb2gtcyw
+    # - TOOLCHAIN: "mingw"
+    #  PROJECT_DIR: examples\Boost-iostreams
+
+    # timeout: https://ci.appveyor.com/project/ingenue/hunter/build/1.0.651/job/h2lruqh872w9x2qa
+    # - TOOLCHAIN: "msys"
+    #   PROJECT_DIR: examples\Boost-iostreams
+
+    ### Boost-thread ###
+
+    # FIXME:
+    # - TOOLCHAIN: "ninja-vs-12-2013-win64"
+    #   PROJECT_DIR: examples\Boost-thread
+
+    # FIXME:
+    # - TOOLCHAIN: "nmake-vs-12-2013-win64"
+    #   PROJECT_DIR: examples\Boost-thread
+
+    - TOOLCHAIN: "vs-12-2013-win64"
+      PROJECT_DIR: examples\Boost-thread
+
+    - TOOLCHAIN: "vs-12-2013-xp"
+      PROJECT_DIR: examples\Boost-thread
+
+    - TOOLCHAIN: "vs-12-2013"
+      PROJECT_DIR: examples\Boost-thread
+
+    - TOOLCHAIN: "vs-14-2015"
+      PROJECT_DIR: examples\Boost-thread
+
+    - TOOLCHAIN: "vs-14-2015-win64"
+      PROJECT_DIR: examples\Boost-thread
+
+    - TOOLCHAIN: "mingw"
+      PROJECT_DIR: examples\Boost-thread
+
+    - TOOLCHAIN: "mingw-c11"
+      PROJECT_DIR: examples\Boost-thread
+
+    # timeout: https://ci.appveyor.com/project/ingenue/hunter/build/1.0.651/job/h2lruqh872w9x2qa
+    # - TOOLCHAIN: "msys"
+    #   PROJECT_DIR: examples\Boost-thread
+
+    ### Boost-chrono ###
+
+    # FIXME:
+    # - TOOLCHAIN: "ninja-vs-12-2013-win64"
+    #   PROJECT_DIR: examples\Boost-chrono
+
+    # FIXME:
+    # - TOOLCHAIN: "nmake-vs-12-2013-win64"
+    #   PROJECT_DIR: examples\Boost-chrono
+
+    - TOOLCHAIN: "vs-12-2013-win64"
+      PROJECT_DIR: examples\Boost-chrono
+
+    - TOOLCHAIN: "vs-12-2013-xp"
+      PROJECT_DIR: examples\Boost-chrono
+
+    - TOOLCHAIN: "vs-12-2013"
+      PROJECT_DIR: examples\Boost-chrono
+
+    - TOOLCHAIN: "vs-14-2015"
+      PROJECT_DIR: examples\Boost-chrono
+
+    - TOOLCHAIN: "mingw"
+      PROJECT_DIR: examples\Boost-chrono
+
+    # timeout: https://ci.appveyor.com/project/ingenue/hunter/build/1.0.651/job/h2lruqh872w9x2qa
+    # - TOOLCHAIN: "msys"
+    #   PROJECT_DIR: examples\Boost-chrono
+
+    ### Boost-serialization ###
+
+    # FIXME:
+    # - TOOLCHAIN: "ninja-vs-12-2013-win64"
+    #   PROJECT_DIR: examples\Boost-serialization
+
+    # FIXME:
+    # - TOOLCHAIN: "nmake-vs-12-2013-win64"
+    #   PROJECT_DIR: examples\Boost-serialization
+
+    - TOOLCHAIN: "vs-12-2013-win64"
+      PROJECT_DIR: examples\Boost-serialization
+
+    - TOOLCHAIN: "vs-12-2013-xp"
+      PROJECT_DIR: examples\Boost-serialization
+
+    - TOOLCHAIN: "vs-12-2013"
+      PROJECT_DIR: examples\Boost-serialization
+
+    - TOOLCHAIN: "vs-14-2015"
+      PROJECT_DIR: examples\Boost-serialization
+
+    - TOOLCHAIN: "mingw"
+      PROJECT_DIR: examples\Boost-serialization
+
+    # timeout: https://ci.appveyor.com/project/ingenue/hunter/build/1.0.651/job/h2lruqh872w9x2qa
+    # - TOOLCHAIN: "msys"
+    #   PROJECT_DIR: examples\Boost-serialization
+
+    - TOOLCHAIN: "mingw-c11"
+      PROJECT_DIR: examples\Boost-program-options
+
+    - TOOLCHAIN: "vs-14-2015-win64"
+      PROJECT_DIR: examples\Boost-test
+
+    - TOOLCHAIN: "mingw-c11"
+      PROJECT_DIR: examples\Boost-test
+
+    - TOOLCHAIN: "vs-14-2015-win64"
+      PROJECT_DIR: examples\Boost-random
+
+    - TOOLCHAIN: "vs-14-2015-win64"
+      PROJECT_DIR: examples\Boost-math
+
+install:
+  # Python 3
+  - cmd: set PATH=C:\Python34-x64;C:\Python34-x64\Scripts;%PATH%
+
+  # Install Python package 'requests'
+  - cmd: pip install requests
+
+  # Install latest Polly toolchains and scripts
+  - cmd: appveyor DownloadFile https://github.com/ruslo/polly/archive/master.zip
+  - cmd: 7z x master.zip
+  - cmd: set POLLY_ROOT=%cd%\polly-master
+
+  # Install dependencies (CMake, Ninja)
+  - cmd: python %POLLY_ROOT%\bin\install-ci-dependencies.py
+
+  # Tune locations
+  - cmd: set PATH=%cd%\_ci\cmake\bin;%PATH%
+  - cmd: set PATH=%cd%\_ci\ninja;%PATH%
+
+  - cmd: git submodule update --init --recursive
+
+  # Remove entry with sh.exe from PATH to fix error with MinGW toolchain
+  # (For MinGW make to work correctly sh.exe must NOT be in your path)
+  # * http://stackoverflow.com/a/3870338/2288008
+  - cmd: set PATH=%PATH:C:\Program Files\Git\usr\bin;=%
+
+  # Use MinGW from Qt tools because version is higher
+  # * http://www.appveyor.com/docs/installed-software#qt
+  - cmd: set MINGW_PATH=C:\Qt\Tools\mingw492_32\bin
+
+  # MSYS2 location
+  - cmd: set MSYS_PATH=C:\msys64\usr\bin
+
+build_script:
+  - cmd: python .\jenkins.py
+
+# http://www.appveyor.com/docs/branches#white-and-blacklisting
+# Exclude branch 'pkg.template'. Nothing to build there.
+branches:
+  except:
+    - pkg.template
+    - /^pr\..*/
+    - /^v[0-9]+\.[0-9]+\.[0-9]+$/
