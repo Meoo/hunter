@@ -27,8 +27,9 @@ environment:
     - TOOLCHAIN: "vs-14-2015"
       PROJECT_DIR: examples\flatbuffers
 
-    - TOOLCHAIN: "mingw"
-      PROJECT_DIR: examples\flatbuffers
+    # FIXME: https://github.com/google/flatbuffers/issues/4524
+    #- TOOLCHAIN: "mingw"
+    #  PROJECT_DIR: examples\flatbuffers
 
     - TOOLCHAIN: "msys"
       PROJECT_DIR: examples\flatbuffers
