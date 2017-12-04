@@ -26,9 +26,9 @@ hunter_add_version(
     VERSION
     1.8.0-p0
     URL
-    "https://github.com/google/flatbuffers/archive/ba08b0ec0266f505bfe06e49e993091157e19c93.zip"
+    "https://github.com/Meoo/flatbuffers/archive/ce68cdda6e37a7c704da951e49d841816dfe07fb.zip"
     SHA1
-    5419255d50cbf36c947a9876b2b99ede18ad02ee
+    81b68d9c045586cc522e3c1f5deff4dc396edc86
 )
 
 hunter_cmake_args(
